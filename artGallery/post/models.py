@@ -28,9 +28,9 @@ class Post(models.Model):
     category = models.PositiveSmallIntegerField(
         choices=CATEGORY,
     )
-    user_id = models.ForeignKey(User)          # need to create user_id field
+    user_id = models.ForeignKey(user)          # need to create user_id field
 
-    class User(object):
+    class User(models.Model):
         """user model"""
         
         user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

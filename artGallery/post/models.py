@@ -1,6 +1,7 @@
 '''modules'''
 from model_utils import Choices
 from django.db import models
+import uuid
 
 class Post(models.Model):
     '''Post model
@@ -23,12 +24,12 @@ class Post(models.Model):
     )
 
     title = models.CharField(max_length=100)
-    description = models.CharField()
+    description = models.TextField()
     created_at = models.DateTimeField()
     category = models.PositiveSmallIntegerField(
         choices=CATEGORY,
     )
-    user_id = models.ForeignKey(user)          # need to create user_id field
+    user_id = models.ForeignKey('user')          # need to create user_id field
 
     class User(models.Model):
         """user model"""

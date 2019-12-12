@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'post',
+    'post.apps.PostConfig', # post app
+    'users.apps.UsersConfig', # users app
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'artGallery.urls'
+ROOT_URLCONF = 'artgallery.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'artGallery.wsgi.application'
+WSGI_APPLICATION = 'artgallery.wsgi.application'
 
 
 # Database

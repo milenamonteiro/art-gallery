@@ -1,7 +1,7 @@
 '''modules'''
 from model_utils import Choices
 from django.db import models
-import uuid
+from django.utils.timezone import now
 
 class Post(models.Model):
     '''Post model
@@ -25,18 +25,8 @@ class Post(models.Model):
 
     title = models.CharField(max_length=100)
     description = models.TextField()
-    created_at = models.DateTimeField()
+    created_at = models.DateTimeField(default=now, blank=True, verbose_name='created at')
     category = models.PositiveSmallIntegerField(
         choices=CATEGORY,
     )
-    user_id = models.ForeignKey('user',on_delete=models.CASCADE)         # need to create user_id field
-
- class User(models.Model):
-    """docstring for User"""
-    user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=30,null=False,blank=False)
-    email = models.EmailField(max_length=254,unique=True)
-    GENDER_CHOICES = (('M', 'Male'),('F', 'Female'),('O', 'Other'))
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
-    date_of_birth = models.DateField(max_length=8)
-    created_at = models.DateTimeField(auto_now_add=True)
+    user_id = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE)

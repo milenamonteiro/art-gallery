@@ -15,6 +15,7 @@ class CustomUser(AbstractUser):
     )
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     date_of_birth = models.DateField(max_length=8)
+    REQUIRED_FIELDS = ['email', 'gender', 'date_of_birth']
 
     def __str__(self):
         return self.username

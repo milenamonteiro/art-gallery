@@ -18,4 +18,4 @@ class CustomUser(AbstractUser):
     REQUIRED_FIELDS = ['email', 'gender', 'date_of_birth']
 
     def __str__(self):
-        return self.username
+        return self.user_id

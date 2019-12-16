@@ -29,4 +29,4 @@ class Post(models.Model):
     category = models.PositiveSmallIntegerField(
         choices=CATEGORY,
     )
-    user_id = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE)
+    user_id = models.ForeignKey('user.CustomUser', on_delete=models.CASCADE)

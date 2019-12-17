@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development ./artgallery/frontend/src/index.js --output ./artgallery/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./artgallery/frontend/src/index.js --output ./artgallery/frontend/static/frontend/main.js"
   },
   "keywords": [],
   "author": "",

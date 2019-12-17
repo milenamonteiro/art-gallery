@@ -1,11 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component} from 'react'
+
+
 
 export class Gallery extends Component {
+
     render() {
         return (
+        
             <div>
-              <h1>Gallery Grid</h1>  
+              
+              <div>
+                 
+                  <img src="https://placekitten.com/g/200/200"/>
+                  <img src="https://placekitten.com/g/200/200"/>
+                  
+              </div>  
             </div>
+
         )
     }
 }

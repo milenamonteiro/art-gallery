@@ -9,7 +9,7 @@ class App extends Component {
         return (
             <Fragment>
                 <Header />
-                <div className="container">
+                <div>
                 <Dashboard/>
                 </div>
             </Fragment>
